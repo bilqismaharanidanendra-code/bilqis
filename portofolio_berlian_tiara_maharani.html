@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berlian Tiara Maharani - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e3ebe3',
+                            200: '#c8d8c8',
+                            300: '#a3bfa3',
+                            400: '#7a9f7a',
+                            500: '#5c825c',
+                            600: '#476847',
+                            700: '#3a523a',
+                            800: '#304330',
+                            900: '#293829',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles & Gradient Backgrounds */
+        .bg-gradient-emerald {
+            background: linear-gradient(135deg, #052e16 0%, #14532d 40%, #15803d 100%);
+        }
+        .bg-gradient-soft-green {
+            background: linear-gradient(135deg, #f0fdf4 0%, #e3ebe3 50%, #dcfce7 100%);
+        }
+        .bg-gradient-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(240, 253, 244, 0.6));
+        }
+        .glass-nav {
+            background: rgba(5, 46, 22, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(134, 239, 172, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #15803d 0%, #4ade80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gallery-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-emerald-900/40 text-white transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Name -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-400 to-emerald-600 flex items-center justify-center text-slate-950 font-bold font-serif text-xl shadow-lg group-hover:scale-105 transition-transform">
+                        B
+                    </div>
+                    <span class="font-serif text-xl font-bold tracking-wide text-emerald-100 group-hover:text-emerald-400 transition-colors">
+                        Berlian Tiara M.
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#beranda" class="text-emerald-200 hover:text-emerald-400 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-400 hover:after:w-full after:transition-all">Beranda</a>
+                    <a href="#tentang" class="text-emerald-200 hover:text-emerald-400 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-400 hover:after:w-full after:transition-all">Tentang</a>
+                    <a href="#skil" class="text-emerald-200 hover:text-emerald-400 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-400 hover:after:w-full after:transition-all">Skill & Hobi</a>
+                    <a href="#galeri" class="text-emerald-200 hover:text-emerald-400 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-400 hover:after:w-full after:transition-all">Galeri Karya</a>
+                    <a href="#kontak" class="px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition-all shadow-md hover:shadow-emerald-500/30">Hubungi Saya</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-emerald-200 hover:text-white focus:outline-none p-2 rounded-lg">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-950/95 border-b border-emerald-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block text-emerald-100 hover:text-emerald-400 py-2 font-medium">Beranda</a>
+            <a href="#tentang" class="block text-emerald-100 hover:text-emerald-400 py-2 font-medium">Tentang</a>
+            <a href="#skil" class="block text-emerald-100 hover:text-emerald-400 py-2 font-medium">Skill & Hobi</a>
+            <a href="#galeri" class="block text-emerald-100 hover:text-emerald-400 py-2 font-medium">Galeri Karya</a>
+            <a href="#kontak" class="block text-center py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-semibold mt-4">Hubungi Saya</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative min-h-screen pt-28 pb-16 flex items-center bg-gradient-emerald text-white overflow-hidden">
+        <!-- Abstract Background Ornaments -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-emerald-300/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/80 border border-emerald-500/30 text-emerald-300 text-sm font-medium shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        Selamat Datang di Portofolio Saya
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight">
+                        Halo, Saya <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-200 to-teal-100">
+                            Berlian Tiara Maharani
+                        </span>
+                    </h1>
+                    
+                    <p class="text-emerald-100/90 text-lg sm:text-xl max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                        Kreator visual & <span class="text-emerald-300 font-medium">Make Up Artist</span> berbakat asal Blitar. Menyatukan estetika kecantikan seni rupa dan tata rias wajah dalam harmoni yang elegan.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#galeri" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 text-slate-950 font-bold hover:shadow-lg hover:shadow-emerald-500/30 hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span>Lihat Karya Saya</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#kontak" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-200 font-semibold transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
+                            <span>Hubungi Langsung</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats Cards -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-emerald-800/60 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-serif font-bold text-emerald-300">100%</p>
+                            <p class="text-xs text-emerald-200/70 uppercase tracking-wider mt-1">Kreativitas</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-serif font-bold text-emerald-300">2+</p>
+                            <p class="text-xs text-emerald-200/70 uppercase tracking-wider mt-1">Keahlian Utama</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-serif font-bold text-emerald-300">Blitar</p>
+                            <p class="text-xs text-emerald-200/70 uppercase tracking-wider mt-1">Jawa Timur</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image / Avatar Illustration -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <!-- Decorative Frame Rings -->
+                        <div class="absolute inset-0 rounded-full border-2 border-dashed border-emerald-400/40 animate-[spin_30s_linear_infinite]"></div>
+                        <div class="absolute -inset-4 rounded-full border border-emerald-500/20"></div>
+                        
+                        <!-- Main Card Container -->
+                        <div class="w-full h-full rounded-full bg-gradient-to-b from-emerald-800 to-emerald-950 p-3 shadow-2xl relative overflow-hidden border border-emerald-400/30 flex items-center justify-center">
+                            <!-- SVG Decorative Artistic Profile Illustration -->
+                            <svg class="w-full h-full text-emerald-300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="90" fill="url(#hero-grad)" opacity="0.3"/>
+                                <!-- Abstract Silhouette / Artist Visual -->
+                                <circle cx="100" cy="75" r="35" fill="#a7f3d0" />
+                                <path d="M100 40C80 40 65 55 65 75C65 95 80 100 100 100C120 100 135 95 135 75C135 55 120 40 100 40Z" fill="#047857" opacity="0.8"/>
+                                <path d="M40 160C40 125 65 115 100 115C135 115 160 125 160 160V180H40V160Z" fill="#34d399"/>
+                                <path d="M100 115L115 140H85L100 115Z" fill="#065f46"/>
+                                <!-- Artistic Brush Overlay -->
+                                <path d="M140 60 Q170 30 160 80 T130 110" stroke="#6ee7b7" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                <circle cx="160" cy="80" r="6" fill="#facc15" />
+                                <defs>
+                                    <linearGradient id="hero-grad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#34d399"/>
+                                        <stop offset="1" stop-color="#065f46"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 right-2 bg-slate-900/90 text-emerald-300 border border-emerald-500/40 px-4 py-2 rounded-2xl backdrop-blur-md shadow-xl text-xs flex items-center gap-2">
+                                <i class="fa-solid fa-palette text-emerald-400 text-sm"></i>
+                                <span>Artist & MUA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Saya Section -->
+    <section id="tentang" class="py-20 bg-gradient-soft-green relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-emerald-700 mb-2">Profil Singkat</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-slate-900">Mengenal Berlian Lebih Dekat</p>
+                <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Description Card -->
+                <div class="lg:col-span-7 bg-white/80 rounded-3xl p-8 sm:p-10 shadow-xl border border-emerald-100 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-emerald-950 mb-4">
+                            Kreativitas Adalah Cara Saya Mengekspresikan Keindahan
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Saya <strong>Berlian Tiara Maharani</strong>, seorang yang memiliki passion mendalam dalam dunia seni visual dan kecantikan. Berdomisili di Garum, Blitar, saya terus mengasah kemampuan dalam seni menggambar serta seni tata rias wajah (*make up*).
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Bagi saya, setiap goresan pensil di atas kertas maupun sentuhan kuas make up pada wajah adalah media cerita yang menyampaikan estetika, rasa percaya diri, dan keunikan tersendiri.
+                        </p>
+                    </div>
+
+                    <!-- Personal Tags -->
+                    <div class="flex flex-wrap gap-3 mt-8 pt-6 border-t border-slate-100">
+                        <span class="px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
+                            <i class="fa-solid fa-paintbrush mr-1.5"></i> Pencil & Digital Drawing
+                        </span>
+                        <span class="px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
+                            <i class="fa-solid fa-sparkles mr-1.5"></i> Beauty & Event Make Up
+                        </span>
+                        <span class="px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
+                            <i class="fa-solid fa-utensils mr-1.5"></i> Culinary Arts
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Info Contact Box -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-emerald-900 to-emerald-950 rounded-3xl p-8 text-white shadow-xl flex flex-col justify-between border border-emerald-700/40">
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-emerald-300 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-address-card text-emerald-400"></i>
+                            Informasi Kontak & Lokasi
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Detail Item 1 -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-800/80 flex items-center justify-center shrink-0 text-emerald-300 border border-emerald-600/30">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-emerald-300/80 font-medium">Nama Lengkap</p>
+                                    <p class="font-semibold text-white">Berlian Tiara Maharani</p>
+                                </div>
+                            </div>
+
+                            <!-- Detail Item 2 -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-800/80 flex items-center justify-center shrink-0 text-emerald-300 border border-emerald-600/30">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-emerald-300/80 font-medium">Alamat</p>
+                                    <p class="font-semibold text-white">Kemloko, Garum, Kabupaten Blitar</p>
+                                    <p class="text-xs text-emerald-200/60 mt-0.5">Jawa Timur, Indonesia</p>
+                                </div>
+                            </div>
+
+                            <!-- Detail Item 3 -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-800/80 flex items-center justify-center shrink-0 text-emerald-300 border border-emerald-600/30">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-emerald-300/80 font-medium">Email Direct</p>
+                                    <a href="mailto:bilqismaharanidanendra@gmail.com" class="font-semibold text-emerald-200 hover:text-emerald-400 transition-colors break-all text-sm sm:text-base">
+                                        bilqismaharanidanendra@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Detail Item 4 -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-800/80 flex items-center justify-center shrink-0 text-emerald-300 border border-emerald-600/30">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-emerald-300/80 font-medium">No. Telepon / WhatsApp</p>
+                                    <a href="https://wa.me/6282131458280" target="_blank" class="font-semibold text-emerald-200 hover:text-emerald-400 transition-colors">
+                                        082131458280
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-emerald-800/80 text-center">
+                        <a href="https://wa.me/6282131458280" target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 transition-all shadow-md">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Kirim Pesan WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skill & Hobi Section -->
+    <section id="skil" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-emerald-700 mb-2">Potensi & Minat</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-slate-900">Keahlian Utama & Hobi</p>
+                <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Skill 1: Menggambar -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 hover:shadow-xl hover:border-emerald-300 transition-all group">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-800 flex items-center justify-center text-white text-2xl shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-serif font-bold text-slate-900">Seni Menggambar</h3>
+                            <p class="text-xs text-emerald-700 font-semibold">Sketsa & Drawing Art</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Memiliki ketelitian tinggi dalam menciptakan lukisan sketsa wujud objek, ilustrasi visual, hingga gambar detail dengan pencahayaan dan bayangan yang halus.
+                    </p>
+                    <!-- Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-700">
+                            <span>Tingkat Kemahiran</span>
+                            <span class="text-emerald-700">92%</span>
+                        </div>
+                        <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-emerald-500 to-emerald-700 rounded-full w-[92%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 2: Make Up -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 hover:shadow-xl hover:border-emerald-300 transition-all group">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-800 flex items-center justify-center text-white text-2xl shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-face-smile-beam"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-serif font-bold text-slate-900">Make Up Artistry</h3>
+                            <p class="text-xs text-emerald-700 font-semibold">Tata Rias & Beauty Art</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Menguasai teknik perataan tone kulit, eye makeup, contouring, dan penataan rias wajah profesional baik untuk tampilan natural harian maupun acara spesial.
+                    </p>
+                    <!-- Progress Bar -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-700">
+                            <span>Tingkat Kemahiran</span>
+                            <span class="text-emerald-700">88%</span>
+                        </div>
+                        <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-emerald-500 to-emerald-700 rounded-full w-[88%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobi Cards Header -->
+            <div class="mt-12 text-center mb-10">
+                <h3 class="text-2xl font-serif font-bold text-slate-900">Hobi & Kegemaran</h3>
+                <p class="text-slate-500 text-sm">Aktivitas yang menginspirasi kreativitas sehari-hari</p>
+            </div>
+
+            <!-- Hobi Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Hobi 1: Memasak -->
+                <div class="bg-gradient-to-br from-emerald-900 to-slate-900 rounded-3xl p-6 text-white shadow-lg flex items-center gap-6 border border-emerald-800/50">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 text-3xl shrink-0">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-serif font-bold text-emerald-200">Memasak (Culinary)</h4>
+                        <p class="text-slate-300 text-xs mt-1 leading-relaxed">
+                            Eksplorasi resep baru dan pengolahan sajian kuliner yang lezat serta berestetika tinggi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Hobi 2: Menggambar -->
+                <div class="bg-gradient-to-br from-emerald-900 to-slate-900 rounded-3xl p-6 text-white shadow-lg flex items-center gap-6 border border-emerald-800/50">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 text-3xl shrink-0">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-serif font-bold text-emerald-200">Menggambar Sketsa</h4>
+                        <p class="text-slate-300 text-xs mt-1 leading-relaxed">
+                            Mengisi waktu luang dengan mencurahkan imajinasi visual ke lembar kertas sketsa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Karya Section -->
+    <section id="galeri" class="py-20 bg-gradient-emerald text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-emerald-300 mb-2">Portofolio Visual</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-white">Galeri Karya & Seni</p>
+                <p class="text-emerald-100/80 text-sm mt-2">Pilihan ilustrasi seni menggambar dan kreasi make up elegan</p>
+                <div class="w-16 h-1 bg-emerald-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center flex-wrap gap-3 mb-12" id="filter-buttons">
+                <button data-filter="all" class="filter-btn active px-6 py-2 rounded-full bg-emerald-400 text-slate-950 font-bold text-sm shadow-md transition-all">
+                    Semua Karya
+                </button>
+                <button data-filter="drawing" class="filter-btn px-6 py-2 rounded-full bg-emerald-950/80 hover:bg-emerald-900 text-emerald-200 font-medium text-sm border border-emerald-700/50 transition-all">
+                    Menggambar
+                </button>
+                <button data-filter="makeup" class="filter-btn px-6 py-2 rounded-full bg-emerald-950/80 hover:bg-emerald-900 text-emerald-200 font-medium text-sm border border-emerald-700/50 transition-all">
+                    Make Up Art
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+                
+                <!-- Gallery Item 1 (Drawing) -->
+                <div class="gallery-item drawing gallery-card bg-emerald-950/60 rounded-3xl overflow-hidden border border-emerald-500/30 group cursor-pointer" onclick="openLightbox('Sketsa Potret Elegant', 'Seni Menggambar', 'Karya seni sketsa wajah dengan fokus detail mata dan arsir pencahayaan alami.', 'drawing-1')">
+                    <div class="relative h-64 bg-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <!-- SVG Visual Art Placeholder -->
+                        <svg class="w-full h-full text-emerald-300 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#064e3b"/>
+                            <circle cx="150" cy="100" r="70" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="4 4"/>
+                            <path d="M110 90 Q150 50 190 90" stroke="#6ee7b7" stroke-width="3" fill="none"/>
+                            <path d="M120 120 Q150 150 180 120" stroke="#34d399" stroke-width="3" fill="none"/>
+                            <circle cx="150" cy="95" r="15" fill="#fde047" opacity="0.8"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-4 right-4 bg-emerald-900/80 text-emerald-300 text-xs px-3 py-1 rounded-full border border-emerald-500/30">Menggambar</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-serif font-bold text-white group-hover:text-emerald-300 transition-colors">Sketsa Potret Elegant</h4>
+                        <p class="text-xs text-emerald-200/70 mt-1">Eksplorasi arsiran pensil detail pada ekspresi wajah.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 (Make Up) -->
+                <div class="gallery-item makeup gallery-card bg-emerald-950/60 rounded-3xl overflow-hidden border border-emerald-500/30 group cursor-pointer" onclick="openLightbox('Glamour Wedding Look', 'Make Up Art', 'Konsep tata rias glamour berkelas untuk acara pernikahan dan resepsi malam.', 'makeup-1')">
+                    <div class="relative h-64 bg-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <!-- SVG Visual Art Placeholder -->
+                        <svg class="w-full h-full text-emerald-300 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#022c22"/>
+                            <path d="M50 150 C100 80 200 80 250 150" stroke="#f472b6" stroke-width="4" fill="none"/>
+                            <circle cx="150" cy="80" r="30" fill="#fb7185" opacity="0.6"/>
+                            <path d="M130 80 Q150 60 170 80" stroke="#fff" stroke-width="3"/>
+                            <circle cx="100" cy="50" r="4" fill="#facc15"/>
+                            <circle cx="200" cy="50" r="4" fill="#facc15"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-4 right-4 bg-pink-900/80 text-pink-300 text-xs px-3 py-1 rounded-full border border-pink-500/30">Make Up</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-serif font-bold text-white group-hover:text-emerald-300 transition-colors">Glamour Event Look</h4>
+                        <p class="text-xs text-emerald-200/70 mt-1">Gaya tata rias tebal elegan dengan highlighter berkilau.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 (Drawing) -->
+                <div class="gallery-item drawing gallery-card bg-emerald-950/60 rounded-3xl overflow-hidden border border-emerald-500/30 group cursor-pointer" onclick="openLightbox('Ilustrasi Flora & Alam', 'Seni Menggambar', 'Kombinasi sketsa tanaman hias dan dedaunan khas estetika hijau.', 'drawing-2')">
+                    <div class="relative h-64 bg-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <svg class="w-full h-full text-emerald-300 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#064e3b"/>
+                            <path d="M150 180 V40 M150 100 Q100 70 80 90 M150 120 Q200 90 220 110 M150 70 Q110 40 90 55" stroke="#34d399" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="150" cy="35" r="12" fill="#a7f3d0"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-4 right-4 bg-emerald-900/80 text-emerald-300 text-xs px-3 py-1 rounded-full border border-emerald-500/30">Menggambar</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-serif font-bold text-white group-hover:text-emerald-300 transition-colors">Botanical Sketch Art</h4>
+                        <p class="text-xs text-emerald-200/70 mt-1">Studi bentuk ornamen dedaunan berestetika tinggi.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 (Make Up) -->
+                <div class="gallery-item makeup gallery-card bg-emerald-950/60 rounded-3xl overflow-hidden border border-emerald-500/30 group cursor-pointer" onclick="openLightbox('Soft Natural Daily Make Up', 'Make Up Art', 'Riasan wajah halus berkesan glowing alami untuk aktivitas harian.', 'makeup-2')">
+                    <div class="relative h-64 bg-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <svg class="w-full h-full text-emerald-300 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#14532d"/>
+                            <circle cx="150" cy="100" r="50" fill="#fbcfe8" opacity="0.4"/>
+                            <ellipse cx="130" cy="90" rx="10" ry="5" fill="#be185d"/>
+                            <ellipse cx="170" cy="90" rx="10" ry="5" fill="#be185d"/>
+                            <path d="M135 125 Q150 140 165 125" stroke="#f43f5e" stroke-width="3" fill="none"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-4 right-4 bg-pink-900/80 text-pink-300 text-xs px-3 py-1 rounded-full border border-pink-500/30">Make Up</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-serif font-bold text-white group-hover:text-emerald-300 transition-colors">Soft Natural Look</h4>
+                        <p class="text-xs text-emerald-200/70 mt-1">Konsep kecantikan murni dengan warna-warna hangat.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 (Drawing) -->
+                <div class="gallery-item drawing gallery-card bg-emerald-950/60 rounded-3xl overflow-hidden border border-emerald-500/30 group cursor-pointer" onclick="openLightbox('Lukisan Karakter Kartun/Anime', 'Seni Menggambar', 'Eksplorasi gaya gambar kreatif dengan garis outline tegas dan ekspresif.', 'drawing-3')">
+                    <div class="relative h-64 bg-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <svg class="w-full h-full text-emerald-300 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#0f766e"/>
+                            <polygon points="150,30 180,90 240,90 190,130 210,190 150,150 90,190 110,130 60,90 120,90" fill="#6ee7b7" opacity="0.7"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-4 right-4 bg-emerald-900/80 text-emerald-300 text-xs px-3 py-1 rounded-full border border-emerald-500/30">Menggambar</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-serif font-bold text-white group-hover:text-emerald-300 transition-colors">Karakter Expressive Art</h4>
+                        <p class="text-xs text-emerald-200/70 mt-1">Gaya seni gambar fantasi berestetika visual modern.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 (Make Up) -->
+                <div class="gallery-item makeup gallery-card bg-emerald-950/60 rounded-3xl overflow-hidden border border-emerald-500/30 group cursor-pointer" onclick="openLightbox('Bold Eye Makeup Art', 'Make Up Art', 'Detail seni tata rias mata dengan perpaduan gradasi warna eyeshadow menarik.', 'makeup-3')">
+                    <div class="relative h-64 bg-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <svg class="w-full h-full text-emerald-300 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#052e16"/>
+                            <path d="M80 100 Q150 40 220 100 Q150 160 80 100 Z" fill="#15803d"/>
+                            <circle cx="150" cy="100" r="25" fill="#facc15"/>
+                            <circle cx="150" cy="100" r="10" fill="#000"/>
+                            <path d="M70 90 Q150 20 230 90" stroke="#4ade80" stroke-width="4" fill="none"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-4 right-4 bg-pink-900/80 text-pink-300 text-xs px-3 py-1 rounded-full border border-pink-500/30">Make Up</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-serif font-bold text-white group-hover:text-emerald-300 transition-colors">Bold Eye Artistry</h4>
+                        <p class="text-xs text-emerald-200/70 mt-1">Kreasi riasan mata dramatis penuh presisi warna.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-gradient-to-b from-emerald-950 to-slate-900 border border-emerald-500/40 rounded-3xl max-w-2xl w-full p-6 text-white relative shadow-2xl">
+            <!-- Close Button -->
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-emerald-900/80 hover:bg-emerald-800 text-emerald-200 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="mb-4">
+                <span id="modal-category" class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Kategori</span>
+                <h3 id="modal-title" class="text-2xl font-serif font-bold text-white mt-2">Judul Karya</h3>
+            </div>
+
+            <!-- Preview Frame -->
+            <div class="h-64 sm:h-80 bg-slate-900 rounded-2xl flex items-center justify-center mb-4 border border-emerald-800/60 p-4">
+                <div id="modal-illustration" class="w-full h-full flex items-center justify-center text-emerald-400">
+                    <!-- SVG Dynamically Inserted -->
+                </div>
+            </div>
+
+            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed mb-6">
+                Deskripsi lengkap karya akan ditampilkan di sini.
+            </p>
+
+            <div class="flex justify-end">
+                <button onclick="closeLightbox()" class="px-6 py-2.5 rounded-full bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 transition-all text-sm">
+                    Tutup Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Kontak / Form Pesan -->
+    <section id="kontak" class="py-20 bg-gradient-soft-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-emerald-700 mb-2">Mari Terhubung</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-slate-900">Tinggalkan Pesan</p>
+                <p class="text-slate-600 text-sm mt-2">Punya pertanyaan atau ingin bekerja sama dalam proyek seni & make up?</p>
+                <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-emerald-100">
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Nama Anda</label>
+                        <input type="text" id="form-name" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 text-sm transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Atau No. WhatsApp</label>
+                        <input type="text" id="form-contact" required placeholder="Contoh: 0812xxxx atau email@gmail.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 text-sm transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Pesan / Keperluan</label>
+                        <textarea id="form-message" rows="4" required placeholder="Tuliskan pesan atau kebutuhan rias/gambar Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 text-sm transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900 text-white font-bold transition-all shadow-lg shadow-emerald-700/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                        <span>Kirim Pesan Ke WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-emerald-200 py-12 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-1">Berlian Tiara Maharani</h3>
+                    <p class="text-xs text-emerald-400">Kemloko, Garum, Kabupaten Blitar • Indonesia</p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/6282131458280" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900 hover:bg-emerald-700 text-emerald-300 flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:bilqismaharanidanendra@gmail.com" class="w-10 h-10 rounded-full bg-emerald-900 hover:bg-emerald-700 text-emerald-300 flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="#beranda" class="w-10 h-10 rounded-full bg-emerald-900 hover:bg-emerald-700 text-emerald-300 flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-emerald-900/60 text-center text-xs text-emerald-400/60">
+                &copy; <span id="year"></span> Berlian Tiara Maharani. All rights reserved. Built for GitHub Pages.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when link clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Gallery Filter System
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-emerald-400', 'text-slate-950', 'font-bold');
+                    b.classList.add('bg-emerald-950/80', 'text-emerald-200', 'font-medium');
+                });
+                // Add active state to clicked
+                btn.classList.add('active', 'bg-emerald-400', 'text-slate-950', 'font-bold');
+                btn.classList.remove('bg-emerald-950/80', 'text-emerald-200');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Modal Logic
+        const modal = document.getElementById('lightbox-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalCategory = document.getElementById('modal-category');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalIllustration = document.getElementById('modal-illustration');
+
+        const illustrationSVGs = {
+            'drawing-1': `<svg class="w-full h-full text-emerald-300" viewBox="0 0 300 200" fill="none"><rect width="300" height="200" fill="#064e3b"/><circle cx="150" cy="100" r="70" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="4 4"/><path d="M110 90 Q150 50 190 90" stroke="#6ee7b7" stroke-width="3" fill="none"/><path d="M120 120 Q150 150 180 120" stroke="#34d399" stroke-width="3" fill="none"/><circle cx="150" cy="95" r="15" fill="#fde047" opacity="0.8"/></svg>`,
+            'makeup-1': `<svg class="w-full h-full text-emerald-300" viewBox="0 0 300 200" fill="none"><rect width="300" height="200" fill="#022c22"/><path d="M50 150 C100 80 200 80 250 150" stroke="#f472b6" stroke-width="4" fill="none"/><circle cx="150" cy="80" r="30" fill="#fb7185" opacity="0.6"/><path d="M130 80 Q150 60 170 80" stroke="#fff" stroke-width="3"/><circle cx="100" cy="50" r="4" fill="#facc15"/><circle cx="200" cy="50" r="4" fill="#facc15"/></svg>`,
+            'drawing-2': `<svg class="w-full h-full text-emerald-300" viewBox="0 0 300 200" fill="none"><rect width="300" height="200" fill="#064e3b"/><path d="M150 180 V40 M150 100 Q100 70 80 90 M150 120 Q200 90 220 110 M150 70 Q110 40 90 55" stroke="#34d399" stroke-width="4" stroke-linecap="round"/><circle cx="150" cy="35" r="12" fill="#a7f3d0"/></svg>`,
+            'makeup-2': `<svg class="w-full h-full text-emerald-300" viewBox="0 0 300 200" fill="none"><rect width="300" height="200" fill="#14532d"/><circle cx="150" cy="100" r="50" fill="#fbcfe8" opacity="0.4"/><ellipse cx="130" cy="90" rx="10" ry="5" fill="#be185d"/><ellipse cx="170" cy="90" rx="10" ry="5" fill="#be185d"/><path d="M135 125 Q150 140 165 125" stroke="#f43f5e" stroke-width="3" fill="none"/></svg>`,
+            'drawing-3': `<svg class="w-full h-full text-emerald-300" viewBox="0 0 300 200" fill="none"><rect width="300" height="200" fill="#0f766e"/><polygon points="150,30 180,90 240,90 190,130 210,190 150,150 90,190 110,130 60,90 120,90" fill="#6ee7b7" opacity="0.7"/></svg>`,
+            'makeup-3': `<svg class="w-full h-full text-emerald-300" viewBox="0 0 300 200" fill="none"><rect width="300" height="200" fill="#052e16"/><path d="M80 100 Q150 40 220 100 Q150 160 80 100 Z" fill="#15803d"/><circle cx="150" cy="100" r="25" fill="#facc15"/><circle cx="150" cy="100" r="10" fill="#000"/><path d="M70 90 Q150 20 230 90" stroke="#4ade80" stroke-width="4" fill="none"/></svg>`
+        };
+
+        function openLightbox(title, category, desc, svgKey) {
+            modalTitle.textContent = title;
+            modalCategory.textContent = category;
+            modalDesc.textContent = desc;
+            modalIllustration.innerHTML = illustrationSVGs[svgKey] || '';
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Redirect Form Submit to WhatsApp
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const contact = document.getElementById('form-contact').value;
+            const message = document.getElementById('form-message').value;
+
+            const text = `Halo Berlian, saya ${name} (${contact}).%0A%0APesan:%0A${message}`;
+            const whatsappUrl = `https://wa.me/6282131458280?text=${text}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
